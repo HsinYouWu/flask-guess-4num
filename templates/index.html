@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>猜 4 個數字遊戲</title>
+</head>
+<body>
+    <h1>猜 4 個不重複的數字</h1>
+    <form method="post">
+        <input type="text" name="guess" maxlength="4" pattern="\d{4}" required>
+        <input type="submit" value="猜！">
+    </form>
+
+    <h3>{{ result }}</h3>
+
+    {% if history %}
+        <h4>歷史紀錄：</h4>
+        <ul>
+        {% for h in history %}
+            <li>{{ h }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
